@@ -1,0 +1,223 @@
+/* General resets */
+* {
+  margin: 0; /* Remove all margin from all elements */
+  padding: 0; /* Remove all padding from all elements */
+  box-sizing: border-box; /* Ensure box-sizing includes padding/border in width/height calculation */
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ffffff; /* Light background for the page */
+  text-align: center;
+}
+
+/* Header Styles */
+header {
+  background-color: #757575; /* Solid color for the header */
+  padding: 1.5em 0; /* Adjust padding to add space inside the header */
+  text-align: center;
+  margin-bottom: 0em; /* Space between header and next section */
+}
+
+h1 {
+  margin: 0; /* No margin for the header title */
+}
+
+nav {
+  margin-top: 1em; /* Space between the title and navigation */
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  padding: 0.5em 1em;
+  margin: 0 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block; /* Align links horizontally */
+}
+
+nav a:hover {
+  background-color: #616161;
+}
+
+/* Section Title - "My Albums" */
+h2 {
+  text-align: center;
+  margin: 1em 0; /* Add margin (1em) at the top and bottom */
+}
+
+/* Main Container */
+main {
+  padding: 0; /* Remove unnecessary padding from main */
+}
+
+/* Albums Container */
+#albums {
+  display: flex;
+  flex-wrap: wrap; /* Allow albums to wrap to the next line */
+  justify-content: space-between; /* Distribute albums with no gaps */
+  gap: 0; /* Remove the gap between albums */
+  margin-top: 0; /* Ensure no margin between heading and albums */
+  width: 100%; /* Ensure the container takes up the full width */
+  padding: 0 1em; /* Add slight horizontal gap (1em) */
+}
+
+/* Individual Album Group */
+.album-group {
+  width: 48%; /* Set width to 48% for two albums per row */
+  padding: 0; /* No padding */
+  text-align: center;
+  margin-bottom: 0.75em; /* Increase vertical gap between rows */
+}
+
+/* Album Styles */
+.album {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Avoids link text color overriding image */
+  width: 100%; /* Full width of the album group */
+  max-width: none; /* Allow flexibility */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.album:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px); /* Slight hover effect */
+}
+
+.album img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.album h3 {
+  margin-top: 0.5em;
+}
+
+.album p {
+  margin-bottom: 0.5em; /* Add a small margin-bottom to create space under the year text */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background-color: #757575;
+  margin-top: 2em;
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+  #albums {
+    justify-content: space-between; /* No space between albums */
+    padding: 0 1em; /* Add slight horizontal gap (1em) */
+  }
+
+  .album-group {
+    width: 48%; /* Each album takes 48% of the width */
+    margin-bottom: 0.75em; /* Small vertical gap between rows (increased) */
+  }
+
+  /* Optional: Adjust album image to make it smaller if needed */
+  .album img {
+    max-width: 100%; /* Ensure the image stretches to fit */
+    height: auto; /* Maintain the aspect ratio */
+  }
+}
+
+/* Desktop Layout (4 albums per row) */
+@media (min-width: 1024px) {
+  #albums {
+    justify-content: space-between; /* Ensure albums take up space between each other */
+  }
+
+  .album-group {
+    width: 23%; /* Set width to 23% for four albums per row */
+    margin-bottom: 0.75em; /* Maintain vertical gap between rows */
+  }
+}
+
+hr {
+  border: 0; /* Remove the default border */
+  border-top: 1px solid #000000; /* Create a solid line with the desired thickness and color */
+  margin: 20px auto; /* Add space above and below the line */
+  width: 97%;
+}
+
+/* Styling for Lost Page */
+body.lost-page header {
+  background-color: #445C38;
+}
+
+nav.lost-page a:hover {
+  background-color: #384c2e;
+}
+
+body.lost-page {
+  background-color: #919f8a;
+}
+
+/* Image Styling for Lost Page */
+img.lost-page {
+  padding: 1em;
+  max-width: 100%; /* Ensure the image never exceeds the width of the container */
+  height: auto; /* Height will adjust based on aspect ratio */
+  max-width: 80%; /* Limit maximum width to 80% of the container on larger screens */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Media Query for Desktop */
+@media (min-width: 1024px) {
+  img.lost-page {
+    max-width: 40%; /* For larger screens, image will occupy 40% of the screen width */
+    margin: 0 auto; /* Horizontally center the image */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Make the image a block element */
+  }
+}
+
+/* Media Query for Smaller Screens (e.g., tablets) */
+@media (max-width: 768px) {
+  img.lost-page {
+    max-width: 100%; /* On smaller screens, the image can take up the full width */
+    margin: 0 auto; /* Horizontally center the image */
+    height: auto; /* Maintain the aspect ratio */
+  display: block; /* Make the image a block element */
+  }
+}
+
+/* Image Styling for Album Names */
+img.album-name {
+  padding: 0em;
+  max-width: 100%; /* Ensure the image never exceeds the width of the container */
+  height: auto; /* Height will adjust based on aspect ratio */
+  max-width: 80%; /* Limit maximum width to 80% of the container on larger screens */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Media Query for Desktop */
+@media (min-width: 1024px) {
+  img.album-name {
+    max-width: 10%; /* For larger screens, image will occupy 40% of the screen width */
+    margin: 0 auto; /* Horizontally center the image */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Make the image a block element */
+  }
+}
+
+/* Media Query for Smaller Screens (e.g., tablets) */
+@media (max-width: 768px) {
+  img.album-name {
+    max-width: 50%; /* On smaller screens, the image can take up the full width */
+    margin: 0 auto; /* Horizontally center the image */
+    height: auto; /* Maintain the aspect ratio */
+  display: block; /* Make the image a block element */
+  }
+}
